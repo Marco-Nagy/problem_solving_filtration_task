@@ -1,0 +1,64 @@
+import 'package:flutter/foundation.dart';
+import 'package:flutter/material.dart';
+
+void main() {
+/*  Filtration Task for Problem Solving BootCamp
+
+  Write a Function that take 2 integergers (n,m) then print all prime numbers between them
+
+  Note: you can implement the task with any language you prefer like (c++,dart,js)
+  Input
+  The input consists of two integers n and m (1≤n≤1000000) and n always less than m
+  Output
+  Print all prime numbers
+
+  Examples
+  Input: 5 10
+  output : 7
+
+  Input: 7 20
+  Output: 11 13 17 19 */
+
+  List<int> primeNumbers(int n, int m) {
+    List<int> primes = [];
+    for (int i = n + 1; i < m; i++) {
+      bool isPrime = true;
+      for (int j = 2; j < i; j++) {
+        if (i % j == 0) {
+          isPrime = false;
+          break;
+        }
+      }
+      if (isPrime) {
+        primes.add(i);
+      }
+    }
+    debugPrint('prime numbers ${primes.toString()}');
+    return primes;
+  }
+
+  listPrimes(int a, int b) {
+    int count = 0;
+    List<int> primes = [];
+
+    for (int i = a + 1; i < b; i++) {
+      count = 0;
+      if( count ==2 || count<i&& !(i%count==0)){
+        count++;
+        primes.add(i);
+
+      }
+
+    }
+    debugPrint('primes ${primes.toString()}');
+    return primes;
+
+  }
+
+    primeNumbers(5, 10);
+    primeNumbers(7, 20);
+    listPrimes(5, 10);
+    listPrimes(7, 20);
+
+  }
+
